@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1vw;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+}
+
+.nav {
+    position: fixed;
+    width: max(1vw, 2vh);
+    height: 100vh;
+    transition: 0.5s;
+    overflow: hidden;
+    padding: 2vw 1vw;
+    border-right: 1px solid lightgrey;
+    height: 75vh;
+    align-self: center;
+    z-index: 1;
+}
+
+.nav:hover {
+    width: 10vw;
+}
+
+.nav__ul {
+    width: 10vw;
+    margin: 0.5vw;
+    /* visibility: hidden; */
+}
+
+.nav ul li {
+    width: 100%;
+    list-style: none;
+    margin: 0.7vw;
+}
+
+.demo:hover {
+    font-weight: bold;
+}
+
+.demoLink {
+    color: #000;
+}
+
+a {
+    text-decoration: none;
+}
+
+.displayNav {
+    visibility: visible;
+}

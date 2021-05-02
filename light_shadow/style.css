@@ -1,0 +1,22 @@
+.demo {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    margin: 1vw;
+    /* justify-content: center;
+    justify-items: center; */
+}
+
+.left {
+    flex: 0.5;
+}
+
+
+.right {
+    flex: 0.5;
+}
+
+.right__content {
+    margin: 10vw;
+    font-size: 5vw;
+}

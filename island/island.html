@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.min.js"></script>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <!-- <script src="https://unpkg.com/aframe-animation-component@^4.1.2/dist/aframe-animation-component.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script>
+    <script
+        src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js">
+    </script>
+    <!-- <script src="https://unpkg.com/super-hands@^3.0.1/dist/super-hands.min.js"></script> -->
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="island.css">
+    <title>island</title>
+</head>
+
+<body>
+    <div class="nav">
+        <ul class="nav__ul">
+            <li>
+                <span class="demoLink">waving in the air</span>
+                <ul class="nav__ul">
+                    <li class="demo">
+                        <a href="/waving1/waving.html">
+                            <span class="demoLink">waving cloth</span>
+                        </a>
+                    </li>
+                    <li class="demo">
+                        <a href="/waving2/waving.html">
+                            <span class="demoLink">waving cloth</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="landingPage"></div>
+
+    <div class="island1">
+        <!-- <img id="mute" src="/images/on.png"> -->
+        <svg id="mute" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 38.05">
+            <path id="Line_1" data-name="Line 1"
+                d="M0.91,15L0.78,15A1,1,0,0,0,0,16v6a1,1,0,1,0,2,0s0,0,0,0V16a1,1,0,0,0-1-1H0.91Z" />
+            <path id="Line_2" data-name="Line 2"
+                d="M6.91,9L6.78,9A1,1,0,0,0,6,10V28a1,1,0,1,0,2,0s0,0,0,0V10A1,1,0,0,0,7,9H6.91Z" />
+            <path id="Line_3" data-name="Line 3"
+                d="M12.91,0L12.78,0A1,1,0,0,0,12,1V37a1,1,0,1,0,2,0s0,0,0,0V1a1,1,0,0,0-1-1H12.91Z" />
+            <path id="Line_4" data-name="Line 4"
+                d="M18.91,10l-0.12,0A1,1,0,0,0,18,11V27a1,1,0,1,0,2,0s0,0,0,0V11a1,1,0,0,0-1-1H18.91Z" />
+            <path id="Line_5" data-name="Line 5"
+                d="M24.91,15l-0.12,0A1,1,0,0,0,24,16v6a1,1,0,0,0,2,0s0,0,0,0V16a1,1,0,0,0-1-1H24.91Z" />
+            <path id="Line_6" data-name="Line 6"
+                d="M30.91,10l-0.12,0A1,1,0,0,0,30,11V27a1,1,0,1,0,2,0s0,0,0,0V11a1,1,0,0,0-1-1H30.91Z" />
+            <path id="Line_7" data-name="Line 7"
+                d="M36.91,0L36.78,0A1,1,0,0,0,36,1V37a1,1,0,1,0,2,0s0,0,0,0V1a1,1,0,0,0-1-1H36.91Z" />
+            <path id="Line_8" data-name="Line 8"
+                d="M42.91,9L42.78,9A1,1,0,0,0,42,10V28a1,1,0,1,0,2,0s0,0,0,0V10a1,1,0,0,0-1-1H42.91Z" />
+            <path id="Line_9" data-name="Line 9"
+                d="M48.91,15l-0.12,0A1,1,0,0,0,48,16v6a1,1,0,1,0,2,0s0,0,0,0V16a1,1,0,0,0-1-1H48.91Z" />
+        </svg>
+
+        <a-scene embedded cursor="rayOrigin:mouse; fuseTimeout: 0" class="scene" vr-mode-ui="enabled: true"
+            physics="gravity: -9.8; restitution: 0.7">
+
+            <a-entity progressive-controls></a-entity>
+
+            <!-- Asset Management System -->
+            <a-assets>
+                <a-asset-item id="microwave" src="assets/3D/microwave/scene.gltf"></a-asset-item>
+                <a-asset-item id="vacation" src="assets/3D/vacation/scene.gltf"></a-asset-item>
+                <a-asset-item id="room" src="assets/3D/animationRoom/scene.gltf"></a-asset-item>
+            </a-assets>
+
+            <a-entity gltf-model="#room" play-all-model-animations modify-room light="type: point; intensity: 4;"
+                id="roomAnimation" rotation="0 -90 0" material="shader:standard"
+                animation="property: position; easing: easeInOutQuad; dir: alternate; dur: 3000; to:-0.5 0 -0.10; loop: true; pauseEvents:animation-pause; resumeEvents: animation-resume"
+                muter static-body shadow="receive:true">
+                <!-- zigzag animation -->
+                <a-sphere class="light" scale="0.05 0.05 0.05" position="1.36 1.25 1" grabbable shadow="cast:true">
+                    <a-entity class="castLight"
+                        light="type:spot; angle: 52; distance:5; penumbra: 2.5; color:red; castShadow: true; intensity: 7;"
+                        visible="false">
+                    </a-entity>
+                </a-sphere>
+                <a-sphere class="light" scale="0.07 0.07 0.07" position="1.36 1.375 0.835" grabbable shadow="cast:true">
+                    <a-entity class="castLight"
+                        light="type: spot; angle: 51; distance:3; penumbra: 0.25; color:yellow; castShadow: true; intensity: 3; target:#vacationAnimation"
+                        visible="false">
+                    </a-entity>
+                </a-sphere>
+                <a-sphere class="light" scale="0.05 0.05 0.05" position="1.36 1.25 0.66" grabbable shadow="cast:true">
+                    <a-entity class="castLight"
+                        light="type: spot; angle: 50; distance:5; penumbra: 2.5; color:blue; castShadow: true; intensity: 7"
+                        visible="false">
+                    </a-entity>
+                </a-sphere>
+                <a-entity gltf-model="#microwave" modify-microwave id="microwaveAnimation" scale="0.2 0.2 0.2"
+                    position="2.5 0 0"
+                    sound="src: url(assets/3D/sounds/microwaveOpen.mp3); autoplay: false; volume:0.8; preload:auto;"
+                    muter static-body shadow="cast:true">
+                </a-entity>
+                <a-entity gltf-model="#vacation" modify-vacation id="vacationAnimation" scale="0.05 0.07 0.05"
+                    position="2.5 0.2 0.06" animation-mixer
+                    animation="property: rotation; to: 0 360 0; dur: 20000; easing: linear; loop: true"
+                    sound="src: url(assets/3D/sounds/bell.wav); autoplay: false; volume:0.08; preload:auto;" muter
+                    shadow="cast:true">
+                </a-entity>
+                <a-box id="recipe" position="2.35 0.38 0.2" color="#4b778d" depth="0.15" height="0.4" width="0.6"
+                    scale="0.5 0.5 0.5" rotation="0 90 0" visible="false" shadow="cast:true"
+                    animation="property: scale; from: 0.1 0.1 0.1; to:0.5 0.5 0.5; dur: 3000; easing: linear; loop:2">
+                    <a-text id="recipeText" class="recipeText" position="-0.2 0.08 0.1" color="#ffffff"
+                        value="Welcome to" width="0.76" scale="1.7 1.7 1.7"
+                        font="https://cdn.aframe.io/fonts/mozillavr.fnt">
+                    </a-text>
+                    <a-text id="recipeText" class="recipeText" position="-0.2 -0.02 0.1" color="#ffffff"
+                        value="Island 09" width="0.76" scale="1.7 1.7 1.7"
+                        font="https://cdn.aframe.io/fonts/mozillavr.fnt">
+                    </a-text>
+                </a-box>
+            </a-entity>
+
+            <a-box id="instruction" position="-3 2 3.5" color="#4b778d" depth="0.045" height="2.15" width="3.5"
+                scale="0.5 0.5 0.5" rotation="0 0 0" side="double">
+                <a-text class="text" position="-1.335 0.5 0.1" color="#ffffff"
+                    value="This is a basic demo to experiment with integrating 3D animations into websites using A-frame."
+                    width="3">
+                </a-text>
+                <a-text class="text" position="-1.335 0.04 0.1" color="#ffffff"
+                    value="Click somewhere in the room to see the animations for the kangaroo." width="3"></a-text>
+                </a-text>
+                <a-text class="text" position="-1.335 -0.28 0.1" value="Click the microwave to open it." color="#ffffff"
+                    width="3">
+                </a-text>
+                <a-text class="text" position="-1.335 -0.615 0.1" color="#ffffff"
+                    value="DOUBLE CLICK somewhere else (e.g., the white background) to go back to the original perspective."
+                    width="3">
+                </a-text>
+                <a-text class="text" position="-1.335 -0.815 0.1" color="#ffffff"
+                    value="Hover on the lights to turn on the lights." width="3">
+                </a-text>
+            </a-box>
+
+            <a-entity id="ocean" ocean="density: 20; width: 50; depth: 50; speed: 4" position="0 -0.2 0"
+                material="color: #b2deec; opacity: 0.75; metalness: 0; roughness: 1" rotation="-90 0 0" shader="ocean"
+                s; sound="src: url(assets/3D/sounds/sea.mp3); autoplay: true; loop: true; volume:0.5; preload:auto;"
+                muter static-body>
+            </a-entity>
+            <a-entity id="light" light="type: ambient; color: #f4f4f2;"></a-entity>
+
+            <!-- <a-entity id="cameraWrapper" position="0 -0.25 6"> -->
+            <!-- <a-camera id="camera" look-controls orbit-controls="target: 0 1.25 0.5;  initialPosition: 0 -0.35 6"> -->
+            <!-- <a-entity id="cameraWrapper" position="0 0 0" orbit-controls="target:0 1.35 0;  initialPosition: 0 1.35 6"> -->
+            <a-entity id="cameraWrapper" position="0 0 0"
+                orbit-controls="target:0 1.35 0; initialPosition: 0 1.35 6; maxPolarAngle: 180;">
+                <a-camera id="camera">
+                </a-camera>
+                <!-- <a-entity sphere-collider="objects: a-box" super-hands hand-controls="hand: left"></a-entity>
+                <a-entity sphere-collider="objects: a-box" super-hands hand-controls="hand: right"></a-entity> -->
+            </a-entity>
+
+            <a-sky shadow="receive: true"></a-sky>
+
+        </a-scene>
+
+        <section class="softClock"> </section>
+
+    </div>
+    <script src="/nav.js"></script>
+    <script src="island.js"></script>
+</body>
+
+</html>
