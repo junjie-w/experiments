@@ -24,9 +24,9 @@ body {
     bottom: -0.83vw;
     right: 5.5vw;
     z-index: 1;
-    width: 3vw;
-    height: 3vw;
-    margin: 1.5vw;
+    width: 2.5vw;
+    height: 2.5vw;
+    margin: 1.15vw;
     cursor: pointer;
     fill: #687980;
     transition: 0.5s;

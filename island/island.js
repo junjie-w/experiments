@@ -2,6 +2,7 @@ let room = document.getElementById("roomAnimation")
 let microwave = document.getElementById("microwaveAnimation")
 let vacation = document.getElementById("vacationAnimation")
 let ocean = document.getElementById("ocean")
+let instruction = document.getElementById("instruction")
 let light = document.querySelectorAll(".light")
 let castLight = document.querySelectorAll(".castLight")
 let muteButton = document.getElementById("mute")
@@ -196,10 +197,15 @@ for (i = 0; i < 3; i++) {
         for (i = 0; i < 3; i++) {
             light[i].emit("light-start");
         }
+
+        setTimeout(() => {
+            instruction.emit("instruction-start")
+        }, 2500)
+
         setTimeout(() => {
             softClock.classList.add("clockAppear")
             clockAppear = true;
-        }, 2000)
+        }, 3000)
     })
 
 }
@@ -251,7 +257,7 @@ const material = new THREE.MeshBasicMaterial({
     map: loader.load("images/clock.jpg")
 });
 const cloth = new THREE.Mesh(geometry, material);
-cloth.position.set(-2.5, 5, 0);
+cloth.position.set(-2.35, 6, 0);
 // if (clockAppear) {
 scene_clock.add(cloth)
 // };
@@ -276,7 +282,7 @@ const clock = new THREE.Clock();
 
 function animate() {
     if (cloth.position.y > 1) {
-        cloth.position.y -= 0.0013;
+        cloth.position.y -= 0.001;
     }
 
     const t = clock.getElapsedTime()

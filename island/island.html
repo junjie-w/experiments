@@ -90,23 +90,23 @@
                 muter static-body shadow="receive:true">
                 <!-- zigzag animation -->
                 <a-sphere class="light" scale="0.05 0.05 0.05" position="1.36 1.25 1" grabbable shadow="cast:true"
-                    animation="property: position; easing: easeInOutQuad; dur: 3000; to:1.2 1.9 -0.4; loop: 1;  startEvents:light-start; pauseEvents:light-pause; resumeEvents: light-resume">
+                    animation="property: position; easing: easeInOutQuad; dur: 3200; to:1.2 1.9 -0.4; loop: 1;  startEvents:light-start; pauseEvents:light-pause; resumeEvents: light-resume">
                     <a-entity class="castLight"
-                        light="type:spot; angle: 52; distance:5; penumbra: 2.5; color:red; castShadow: true; intensity: 7;"
+                        light="type:spot; angle: 52; distance:5; penumbra: 2.5; color:red; castShadow: true; intensity: 7; target:#microwaveAnimation"
                         visible="false">
                     </a-entity>
                 </a-sphere>
                 <a-sphere class="light" scale="0.07 0.07 0.07" position="1.36 1.375 0.835" grabbable shadow="cast:true"
-                    animation="property: position; easing: easeInOutQuad; dur: 3000; to:1 2 -0.1; loop: 1;startEvents:light-start; pauseEvents:light-pause; resumeEvents: light-resume">
+                    animation="property: position; easing: easeInOutQuad; dur: 3500; to:1 2 -0.1; loop: 1;startEvents:light-start; pauseEvents:light-pause; resumeEvents: light-resume">
                     <a-entity class="castLight"
                         light="type: spot; angle: 51; distance:3; penumbra: 0.25; color:yellow; castShadow: true; intensity: 3; target:#vacationAnimation"
                         visible="false">
                     </a-entity>
                 </a-sphere>
                 <a-sphere class="light" scale="0.05 0.05 0.05" position="1.36 1.25 0.66" grabbable shadow="cast:true"
-                    animation="property: position; easing: easeInOutQuad; dur: 3000; to:1.7 1.8 0.1; loop: 1; startEvents:light-start; pauseEvents:light-pause; resumeEvents: light-resume">
+                    animation="property: position; easing: easeInOutQuad; dur: 3300; to:1.7 1.8 0.1; loop: 1; startEvents:light-start; pauseEvents:light-pause; resumeEvents: light-resume">
                     <a-entity class="castLight"
-                        light="type: spot; angle: 50; distance:5; penumbra: 2.5; color:blue; castShadow: true; intensity: 7"
+                        light="type: spot; angle: 50; distance:5; penumbra: 2.5; color:blue; castShadow: true; intensity: 7; target:#microwaveAnimation"
                         visible="false">
                     </a-entity>
                 </a-sphere>
@@ -135,9 +135,10 @@
                 </a-box>
             </a-entity>
 
-            <a-box id="instruction" position="-3 2 3.5" color="#4b778d" depth="0.045" height="2.15" width="3.5"
-                scale="0.5 0.5 0.5" rotation="0 0 0" side="double">
-                <a-text class="text" position="-1.335 0.6 0.1" color="#ffffff"
+            <a-box id="instruction" position="-2.68 2 3.45" color="#4b778d" depth="0.045" height="2.15" width="3.5"
+                scale="0.5 0.5 0.5" rotation="0 0 0" side="double"
+                animation="property: position; to:-30 -9 -20; dur: 18500; easing: easeInOutQuad; startEvents:instruction-start">
+                <a-text class=" text" position="-1.335 0.6 0.1" color="#ffffff"
                     value="This is a basic demo to experiment with integrating 3D animations into websites using A-frame."
                     width="3">
                 </a-text>
@@ -175,11 +176,9 @@
             </a-entity>
 
             <a-sky shadow="receive: true"></a-sky>
-
         </a-scene>
 
         <section class="softClock"> </section>
-
     </div>
     <script src="/nav.js"></script>
     <script src="island.js"></script>
