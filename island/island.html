@@ -20,6 +20,7 @@
     <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js">
     </script>
     <!-- <script src="https://unpkg.com/super-hands@^3.0.1/dist/super-hands.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/three-orbitcontrols@2.110.3/OrbitControls.min.js"></script>
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="island.css">
     <title>island</title>
@@ -72,7 +73,7 @@
         </svg>
 
         <a-scene embedded cursor="rayOrigin:mouse; fuseTimeout: 0" class="scene" vr-mode-ui="enabled: true"
-            physics="gravity: -9.8; restitution: 0.7">
+            physics="gravity: 0.1; restitution: 0.7">
 
             <a-entity progressive-controls></a-entity>
 
@@ -88,19 +89,22 @@
                 animation="property: position; easing: easeInOutQuad; dir: alternate; dur: 3000; to:-0.5 0 -0.10; loop: true; pauseEvents:animation-pause; resumeEvents: animation-resume"
                 muter static-body shadow="receive:true">
                 <!-- zigzag animation -->
-                <a-sphere class="light" scale="0.05 0.05 0.05" position="1.36 1.25 1" grabbable shadow="cast:true">
+                <a-sphere class="light" scale="0.05 0.05 0.05" position="1.36 1.25 1" grabbable shadow="cast:true"
+                    animation="property: position; easing: easeInOutQuad; dur: 3000; to:1.2 1.9 -0.4; loop: 1;  startEvents:light-start; pauseEvents:light-pause; resumeEvents: light-resume">
                     <a-entity class="castLight"
                         light="type:spot; angle: 52; distance:5; penumbra: 2.5; color:red; castShadow: true; intensity: 7;"
                         visible="false">
                     </a-entity>
                 </a-sphere>
-                <a-sphere class="light" scale="0.07 0.07 0.07" position="1.36 1.375 0.835" grabbable shadow="cast:true">
+                <a-sphere class="light" scale="0.07 0.07 0.07" position="1.36 1.375 0.835" grabbable shadow="cast:true"
+                    animation="property: position; easing: easeInOutQuad; dur: 3000; to:1 2 -0.1; loop: 1;startEvents:light-start; pauseEvents:light-pause; resumeEvents: light-resume">
                     <a-entity class="castLight"
                         light="type: spot; angle: 51; distance:3; penumbra: 0.25; color:yellow; castShadow: true; intensity: 3; target:#vacationAnimation"
                         visible="false">
                     </a-entity>
                 </a-sphere>
-                <a-sphere class="light" scale="0.05 0.05 0.05" position="1.36 1.25 0.66" grabbable shadow="cast:true">
+                <a-sphere class="light" scale="0.05 0.05 0.05" position="1.36 1.25 0.66" grabbable shadow="cast:true"
+                    animation="property: position; easing: easeInOutQuad; dur: 3000; to:1.7 1.8 0.1; loop: 1; startEvents:light-start; pauseEvents:light-pause; resumeEvents: light-resume">
                     <a-entity class="castLight"
                         light="type: spot; angle: 50; distance:5; penumbra: 2.5; color:blue; castShadow: true; intensity: 7"
                         visible="false">
@@ -133,22 +137,22 @@
 
             <a-box id="instruction" position="-3 2 3.5" color="#4b778d" depth="0.045" height="2.15" width="3.5"
                 scale="0.5 0.5 0.5" rotation="0 0 0" side="double">
-                <a-text class="text" position="-1.335 0.5 0.1" color="#ffffff"
+                <a-text class="text" position="-1.335 0.6 0.1" color="#ffffff"
                     value="This is a basic demo to experiment with integrating 3D animations into websites using A-frame."
                     width="3">
                 </a-text>
-                <a-text class="text" position="-1.335 0.04 0.1" color="#ffffff"
+                <a-text class="text" position="-1.335 0.18 0.1" color="#ffffff"
                     value="Click somewhere in the room to see the animations for the kangaroo." width="3"></a-text>
                 </a-text>
-                <a-text class="text" position="-1.335 -0.28 0.1" value="Click the microwave to open it." color="#ffffff"
+                <a-text class="text" position="-1.335 -0.1 0.1" value="Click the microwave to open it." color="#ffffff"
                     width="3">
                 </a-text>
-                <a-text class="text" position="-1.335 -0.615 0.1" color="#ffffff"
+                <a-text class="text" position="-1.335 -0.4 0.1" color="#ffffff"
                     value="DOUBLE CLICK somewhere else (e.g., the white background) to go back to the original perspective."
                     width="3">
                 </a-text>
-                <a-text class="text" position="-1.335 -0.815 0.1" color="#ffffff"
-                    value="Hover on the lights to turn on the lights." width="3">
+                <a-text class="text" position="-1.335 -0.75 0.1" color="#ffffff"
+                    value="Hover and click on the lights to see more animations." width="3">
                 </a-text>
             </a-box>
 
