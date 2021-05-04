@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shadow/shadow.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous"></script>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js">
+    </script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script>
+    <script
+        src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js">
+    </script>
+
+    <!-- <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js">
+    </script> -->
+    <title>light_shadow</title>
+</head>
+
+<body>
+    <div class="nav"> </div>
+
+    <!-- <div class="moonlight">
+        <img src="images/bg.jpg" alt="" id="bg">
+        <img src="images/moon.png" alt="" id="moon">
+        <img src="images/mountain.png" alt="" id="mountain">
+        <img src="images/road.png" alt="" id="road">
+        <h2 id="text">Moon Light</h2>
+    </div> -->
+
+    <div class="demo">
+        <div class="left">
+            <a-scene cursor="rayOrigin:mouse; fuseTimeout: 0" physics="gravity: -2.8; restitution: 0.8; debug: false;"
+                antialias='true' id="scene">
+                <!-- <a-entity progressive-controls></a-entity> -->
+
+                <a-assets>
+                    <img id=" grass" src="shadow/images/grass.jpg">
+                    <a-asset-item id="trafficLights" src="shadow/assets/traffic lights/scene.gltf"> </a-asset-item>
+                    <a-asset-item id="streetLamp" src="shadow/assets/street lamp/scene.gltf"> </a-asset-item>
+                    <a-asset-item id="snowman" src="shadow/assets/snowman/scene.gltf"> </a-asset-item>
+                </a-assets>
+                <!-- <a-entity position="0 2.25 -15" particle-system="color: #EF0000,#44CC00"></a-entity> -->
+                <a-entity position="0 5 0" particle-system="preset: dust; color:#64958f, white; maxAge: 3;">
+                </a-entity>
+                <a-entity position="0 5 0" particle-system="preset: snow; color:#64958f, white; maxAge: 3.5;">
+                </a-entity>
+
+                <a-sky color="#212121"></a-sky>
+                <!-- <a-plane static-body position="0 0 -4" rotation="-90 0 0" width="100" height="100" color="#7BC8A4"
+                    shadow="receive:true" material.src="#grass"></a-plane> -->
+
+                <a-plane static-body position="0 0 -3" rotation="-90 0 0" height="100" width="100" shadow="receive:true"
+                    color="#7BC8A4" src="#grass" repeat="100 100 1">
+                </a-plane>
+
+                <a-entity light="type:ambient; intensity: 0.3"></a-entity>
+                <a-entity light="type: directional; intensity:0.2;castShadow: true" position="-0.5 1 1">
+                </a-entity>
+
+
+                <a-entity gltf-model="#trafficLights" position="-16 0.25 -8" scale="0.18 0.18 0.18"
+                    shadow="receive: true">
+
+                    <a-entity position="5.718 23.475 1.38" id="red-light"
+                        light="intensity:4;distance:0.4;color:#cc0000;type:point" visible=true>
+                        <a-animation attribute="light.intensity" to="0.1" dur="4000" direction="alternate"
+                            repeat="indefinite">
+                        </a-animation>
+                    </a-entity>
+                    <a-entity position="20.218 23.475 1.38" id="red-light-cone"
+                        light="angle:50;type: spot;color:#cc0000; penumbra: 0.3;castShadow: true;" rotation="-90 0 0"
+                        visible=true>
+                        <a-animation attribute="light.intensity" from="1" to="0.2" repeat="indefinite" dur="4000"
+                            direction="alternate"></a-animation>
+                    </a-entity>
+
+                    <a-entity position="5.218 21.475 1.38" id="yellow-light"
+                        light="intensity:4;distance:0.4;color:yellow;type:point" visible=false>
+                        <a-animation attribute="light.intensity" to="0.1" dur="3000" repeat="indefinite"
+                            id="yellow-light" direction="alternate" startEvents="yellow-start">
+                        </a-animation>
+                    </a-entity>
+                    <a-entity position="5.218 21.475 1.38" id="yellow-light-cone"
+                        light="angle:50;type: spot;color:yellow; penumbra: 0.3;castShadow: true;" rotation="-90 0 0"
+                        visible=false>
+                        <a-animation attribute="light.intensity" from="1" to="0.2" repeat="indefinite" dur="3000"
+                            direction="alternate"></a-animation>
+                    </a-entity>
+
+                    <a-entity position="5.218 19 1.38" id="green-light"
+                        light="intensity:4;distance:0.4;color:green;type:point" visible=false>
+                        <a-animation attribute="light.intensity" to="0.1" dur="5000" direction="alternate"
+                            repeat="indefinite">
+                        </a-animation>
+                    </a-entity>
+                    <a-entity position="-3.218 19 9.38" id="green-light-cone"
+                        light="angle:50;type: spot;color:green; penumbra: 0.3;castShadow: true;" rotation="-90 0 0"
+                        visible=false>
+                        <a-animation attribute="light.intensity" from="1" to="0.2" repeat="indefinite" dur="5000"
+                            direction="alternate"></a-animation>
+                    </a-entity>
+
+                </a-entity>
+
+                <a-entity gltf-model="#streetLamp" position="4 2.925 0.75" rotation="0 180 0" shadow="receive: true">
+                    <a-entity position="2.664 2.176 -0.032" id="light-bulb"
+                        light="intensity:4;distance:3.75;color:#ffcc00;type:point; decay:2">
+                        <a-animation attribute="light.intensity" to="1.8" repeat="indefinite" dur="5000"
+                            direction="alternate"></a-animation>
+                    </a-entity>
+                    <a-entity position="2.664 2.176 -0.032" id="light-cone"
+                        light="angle:45;type: spot;color:#ffcc00; penumbra: 0.3;castShadow: true" rotation="-90 0 0">
+                        <a-animation attribute="light.intensity" from="1.5" to="0.5" repeat="indefinite" dur="5000"
+                            direction="alternate"></a-animation>
+                    </a-entity>
+                </a-entity>
+                <!-- <a-entity position="1.402 4.909 0.009" id="light-bulb"
+                    light="intensity:2;distance:4;color:#ffcc00;type:point; decay:2">
+                </a-entity>
+                <a-entity position="1.402 5.479 0.009" id="light-cone"
+                    light="angle:45;type: spot;color:#ffcc00; penumbra: 0.3;castShadow: true" rotation="-90 0 0">
+                </a-entity> -->
+
+
+                <!-- <a-sphere id="ball" position="-2 3 -2.49" radius="0.5" color="tomato" mass="1" shader="standard">
+                </a-sphere> -->
+                <!-- <a-entity gltf-model="#snowman" id="snowmanAnimation" position="-1 0.8 0" scale="0.6 0.6 0.6"
+                    shadow="receive: true" shadow="cast:true" rotation="0 70 0"
+                    animation="property: rotation; to:0 130 0; dir: alternate; loop:true; dur:5000; easing:linear;pauseEvents:snowman-rotatePause"> -->
+                <a-entity gltf-model="#snowman" id="snowmanAnimation" position="-1 0.8 0" scale="0.6 0.6 0.6"
+                    shadow="receive: true" shadow="cast:true" rotation="0 70 0">
+                    <a-animation attribution="rotation" to="0 130 0" direction="alternate" repeat="indefinite"
+                        dur="5000" easing="linear" pauseEvents="snowman-rotatePause" id="rotatePause">
+                    </a-animation>
+                    <!-- <a-animation attribution="position" to="1 0.8 0" dur="5000" easing="linear"
+                        startEvents="snowman-start">
+                    </a-animation> -->
+                </a-entity>
+
+                <!-- <a-box color="#ffeb3b" scale="0.5 0.5 0.5" position="-1 1 0" shadow="cast:true">
+                    <a-animation attribution="rotation" to="0 360 0" repeat="indefinite" dur="5000" easing="linear">
+                    </a-animation>
+                </a-box> -->
+                <!-- dynamic-body="linearDamping: 0.05; angularDamping: 0.01" -->
+                <a-sphere color="#ff5722" scale="0.5 0.5 0.5" position="1 1 1" shadow="cast:true" id="ball">
+                    <a-animation attribute="rotation" to="0 360 0" repeat="indefinite" dur="5000" easing="linear"
+                        id="snomanRotate">
+                    </a-animation>
+                    <a-animation attribute="position" to="1 1 -2" repeat="indefinite" dur="5000" direction="alternate">
+                    </a-animation>
+                </a-sphere>
+
+                <a-entity id="cameraWrapper" position="0 0 3"
+                    orbit-controls="target:0 1.35 0; initialPosition: 0 1.35 6; maxPolarAngle: 180;">
+                    <a-camera id="camera">
+                    </a-camera>
+                </a-entity>
+                <!-- <a-entity position="0 0 9">
+                    <a-camera look-controls></a-camera>
+                </a-entity> -->
+
+            </a-scene>
+        </div>
+
+        <div class="right">
+            <!-- <div class="right__content">
+                <p>Lorem ipsum dolor</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In temporibus aspernatur, optio delectus
+                    architecto
+                    itaque ducimus laborum eius, veritatis repellat ratione aut molestiae veniam sit consequatur
+                    suscipit
+                    soluta
+                    recusandae corporis.</p>
+            </div> -->
+        </div>
+    </div>
+
+    <script src="nav.js"></script>
+    <script src="shadow/shadow.js"></script>
+</body>
+
+</html>
+
+<!-- light change on scroll 
+moonlight 
+particles  -->
