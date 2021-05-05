@@ -27,11 +27,14 @@ let lightCone = [yellowLightCone, redLightCone, greenLightCone]
 
 ball.addEventListener("mouseenter", () => {
     ball.setAttribute("dynamic-body", "linearDamping", "0.45")
-
+    setTimeout(() => {
+        ball.removeAttribute("dynamic-body")
+    }, 9000)
 })
 // ball.addEventListener("click", () => {
 //     ball.removeAttribute("dynamic-body")
 // })
+
 
 setTimeout(() => {
     yellowLight.setAttribute("visible", true)

@@ -205,7 +205,9 @@ for (i = 0; i < 3; i++) {
         setTimeout(() => {
             softClock.classList.add("clockAppear")
             clockAppear = true;
-        }, 3000)
+        }, 1000)
+
+        // }, 3000)
     })
 
 }
@@ -254,10 +256,11 @@ const geometry = new THREE.CircleGeometry(0.45, 100, 50, 30);
 const material = new THREE.MeshBasicMaterial({
     color: "#fff",
     // wireframe: true,
-    map: loader.load("images/clock.jpg")
+    map: loader.load("island/images/clock.jpg")
 });
 const cloth = new THREE.Mesh(geometry, material);
-cloth.position.set(-2.35, 6, 0);
+cloth.position.set(-2.35, 4.75, 0);
+// cloth.position.set(-2.35, 6, 0);
 // if (clockAppear) {
 scene_clock.add(cloth)
 // };
