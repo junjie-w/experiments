@@ -133,9 +133,9 @@ particleSetup = () => {
         clock = new THREE.Clock();
 
         // Controls
-        const controls = new THREE.OrbitControls(cam, renderer.particle)
-        // controls.enableDamping = true
-        controls.update();
+        // const controls = new THREE.OrbitControls(cam, renderer.particle)
+        // // controls.enableDamping = true
+        // controls.update();
 
         animate();
     })

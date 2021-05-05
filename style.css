@@ -21,7 +21,7 @@ body {
     border-right: 1px solid lightgrey;
     height: 75vh;
     align-self: center;
-    z-index: 1;
+    z-index: 3;
 }
 
 .nav:hover {
