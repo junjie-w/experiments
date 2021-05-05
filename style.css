@@ -55,3 +55,15 @@ a {
 .displayNav {
     visibility: visible;
 }
+
+.demo_white span {
+    color: white;
+}
+
+/* body {
+    display: grid;
+} */
+
+.readme {
+    margin: auto;
+}

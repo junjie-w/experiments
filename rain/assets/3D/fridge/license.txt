@@ -1,0 +1,11 @@
+Model Information:
+* title:	Little Yellow Fridge
+* source:	https://sketchfab.com/3d-models/little-yellow-fridge-f99a5517339d486b9551a16097217c6f
+* author:	Egg Studio (https://sketchfab.com/Estelle.Ggo)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Little Yellow Fridge" (https://sketchfab.com/3d-models/little-yellow-fridge-f99a5517339d486b9551a16097217c6f) by Egg Studio (https://sketchfab.com/Estelle.Ggo) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
