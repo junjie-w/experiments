@@ -200,12 +200,12 @@ for (i = 0; i < 3; i++) {
 
         setTimeout(() => {
             instruction.emit("instruction-start")
-        }, 2500)
+        }, 1200)
 
         setTimeout(() => {
             softClock.classList.add("clockAppear")
             clockAppear = true;
-        }, 1000)
+        }, 2000)
 
         // }, 3000)
     })
@@ -259,7 +259,7 @@ const material = new THREE.MeshBasicMaterial({
     map: loader.load("island/images/clock.jpg")
 });
 const cloth = new THREE.Mesh(geometry, material);
-cloth.position.set(-2.35, 4.75, 0);
+cloth.position.set(-2.35, 5, 0);
 // cloth.position.set(-2.35, 6, 0);
 // if (clockAppear) {
 scene_clock.add(cloth)
