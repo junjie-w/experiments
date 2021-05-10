@@ -183,7 +183,7 @@
 
     40% {
         transform:
-            translate3d(350px, 10px, 50px) rotate3d(0, 0, 0, 0deg);
+            translate3d(350px, 25px, 50px) rotate3d(0, 0, 0, 0deg);
     }
 
     45% {
@@ -213,6 +213,6 @@
 
     100% {
         transform:
-            translate3d(-100px, 0px, -10px) rotate3d(0, 1, 0, 180deg);
+            translate3d(-120px, 0px, -10px) rotate3d(0, 1, 0, 180deg);
     }
 }
