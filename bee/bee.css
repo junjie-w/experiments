@@ -1,0 +1,213 @@
+.flyingBee {
+    height: 100vh;
+    margin: auto;
+    display: grid;
+    place-items: center;
+    perspective: 1200px;
+    transform-style: preserve-3d;
+}
+
+.bee {
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    width: 4vw;
+    transform: translate3d(0, 0, 0);
+
+    /* -webkit-transform: scaleX(-1);
+    transform: scaleX(-1); */
+}
+
+.leaves {
+    transform: translate3d(0, 0, 0);
+    animation-name: leaves;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 7s;
+    transform-origin: bottom center;
+}
+
+@keyframes leaves {
+    0% {
+        transform:
+            translate3d(0, 0, 0) rotate3d(0, 1, 1, 0);
+    }
+
+    50% {
+        transform:
+            translate3d(0px, 0px, 0px) rotate3d(0, 1, 1, 2deg);
+    }
+
+    100% {
+        transform:
+            translate3d(0px, 0px, 0px) rotate3d(0, 1, 1, -2deg);
+    }
+}
+
+#wing1 {
+    animation-name: wing1;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    /* transform: rotate(100deg); */
+    animation-duration: 1s;
+}
+
+@keyframes wing1 {
+    0% {
+        transform:
+            translate3d(0, 0, 0) rotate3d(0, 0, 0, 0);
+    }
+
+    50% {
+        transform:
+            translate3d(10px, -10px, 0px) rotate3d(0, 0, 0, 0deg);
+    }
+
+    100% {
+        transform:
+            translate3d(0px, 0px, 0px) rotate3d(0, 0, 0, 0deg);
+    }
+}
+
+#wing2 {
+    animation-name: wing2;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    /* transform: rotate(100deg); */
+    animation-duration: 1s;
+}
+
+@keyframes wing2 {
+    0% {
+        transform:
+            translate3d(0, 0, 0) rotate3d(0, 0, 0, 0);
+    }
+
+    50% {
+        transform:
+            translate3d(-10px, -10px, 0px) rotate3d(0, 0, 0, 0deg);
+    }
+
+    100% {
+        transform:
+            translate3d(0px, 0px, 0px) rotate3d(0, 0, 0, 0deg);
+    }
+
+}
+
+.leaf1 {
+    animation-name: leaf1;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    /* transform: rotate(100deg); */
+    animation-duration: 4s;
+}
+
+@keyframes leaf1 {
+    0% {
+        transform:
+            translate3d(0, 0, 0) rotate3d(0, 0, 0, 0);
+    }
+
+    50% {
+        transform:
+            translate3d(5px, 5px, 5px) rotate3d(1, 1, 0, 45deg);
+    }
+
+    100% {
+        transform:
+            translate3d(0px, 0px, 0px) rotate3d(0, 0, 0, 0deg);
+    }
+
+}
+
+.leaf2 {
+    animation-name: leaf2;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    /* transform: rotate(100deg); */
+    animation-duration: 7s;
+}
+
+@keyframes leaf2 {
+    0% {
+        transform:
+            translate3d(0, 0, 0) rotate3d(0, 0, 0, 0);
+    }
+
+    50% {
+        transform:
+            translate3d(0px, 5px, 5px) rotate3d(1, 1, 0, 30deg);
+    }
+
+    100% {
+        transform:
+            translate3d(0px, 0px, 0px) rotate3d(0, 0, 0, 0deg);
+    }
+
+}
+
+.bee {
+    animation-name: beeFly;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    /* transform: rotate(100deg); */
+    animation-duration: 12s;
+}
+
+@keyframes beeFly {
+    0% {
+        transform:
+            translate3d(-65px, 0, 0) rotate3d(0, 0, 0, 0);
+    }
+
+    10% {
+        transform:
+            translate3d(50px, 50px, 100px) rotate3d(0, 1, 0, 18deg);
+    }
+
+    20% {
+        transform:
+            translate3d(200px, 100px, 100px) rotate3d(0, 0, 0, 0deg);
+    }
+
+    30% {
+        transform:
+            translate3d(300px, 0px, 50px) rotate3d(0, 0, 0, 0deg);
+    }
+
+    40% {
+        transform:
+            translate3d(400px, 10px, 50px) rotate3d(0, 0, 0, 0deg);
+    }
+
+    45% {
+        transform:
+            translate3d(400px, 0px, 50px) rotate3d(0.3, 1, 0, 180deg);
+    }
+
+    60% {
+        transform:
+            translate3d(300px, 50px, -20px) rotate3d(0.1, 1, 0, 180deg);
+    }
+
+    70% {
+        transform:
+            translate3d(200px, 100px, -20px) rotate3d(0, 1, 0, 180deg);
+    }
+
+    80% {
+        transform:
+            translate3d(100px, 50px, -20px) rotate3d(0, 1, 0, 180deg);
+    }
+
+    90% {
+        transform:
+            translate3d(50px, 25px, -10px) rotate3d(0, 1, 0, 180deg);
+    }
+
+    100% {
+        transform:
+            translate3d(-65px, 0px, 0px) rotate3d(0, 1, 0, 180deg);
+    }
+}
