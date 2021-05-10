@@ -23,7 +23,7 @@
     animation-name: leaves;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-    animation-duration: 7s;
+    animation-duration: 5s;
     transform-origin: bottom center;
 }
 
@@ -33,14 +33,19 @@
             translate3d(0, 0, 0) rotate3d(0, 1, 1, 0);
     }
 
-    50% {
+    25% {
         transform:
-            translate3d(0px, 0px, 0px) rotate3d(0, 1, 1, 2deg);
+            translate3d(0px, 0px, 0px) rotate3d(0, 1, 1, 2.5deg);
+    }
+
+    75% {
+        transform:
+            translate3d(0px, 0px, 0px) rotate3d(0, 1, 1, -2deg);
     }
 
     100% {
         transform:
-            translate3d(0px, 0px, 0px) rotate3d(0, 1, 1, -2deg);
+            translate3d(0px, 0px, 0px) rotate3d(0, 1, 1, 0deg);
     }
 }
 
@@ -60,7 +65,7 @@
 
     50% {
         transform:
-            translate3d(10px, -10px, 0px) rotate3d(0, 0, 0, 0deg);
+            translate3d(13px, -13px, 0px) rotate3d(0, 0, 0, 0deg);
     }
 
     100% {
@@ -85,7 +90,7 @@
 
     50% {
         transform:
-            translate3d(-10px, -10px, 0px) rotate3d(0, 0, 0, 0deg);
+            translate3d(-13px, -13px, 0px) rotate3d(0, 0, 0, 0deg);
     }
 
     100% {
@@ -158,12 +163,12 @@
 @keyframes beeFly {
     0% {
         transform:
-            translate3d(-65px, 0, 0) rotate3d(0, 0, 0, 0);
+            translate3d(-75px, 0, 0) rotate3d(0, 0, 0, 0);
     }
 
     10% {
         transform:
-            translate3d(50px, 50px, 100px) rotate3d(0, 1, 0, 18deg);
+            translate3d(50px, 40px, 100px) rotate3d(0, 1, 0, 18deg);
     }
 
     20% {
@@ -173,12 +178,12 @@
 
     30% {
         transform:
-            translate3d(300px, 0px, 50px) rotate3d(0, 0, 0, 0deg);
+            translate3d(300px, 50px, 50px) rotate3d(0, 0, 0, 0deg);
     }
 
     40% {
         transform:
-            translate3d(400px, 10px, 50px) rotate3d(0, 0, 0, 0deg);
+            translate3d(350px, 10px, 50px) rotate3d(0, 0, 0, 0deg);
     }
 
     45% {
@@ -208,6 +213,6 @@
 
     100% {
         transform:
-            translate3d(-65px, 0px, 0px) rotate3d(0, 1, 0, 180deg);
+            translate3d(-75px, 0px, 0px) rotate3d(0, 1, 0, 180deg);
     }
 }
