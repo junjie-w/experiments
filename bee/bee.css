@@ -55,6 +55,7 @@
     animation-timing-function: linear;
     /* transform: rotate(100deg); */
     animation-duration: 1s;
+    transform-origin: bottom center;
 }
 
 @keyframes wing1 {
@@ -80,6 +81,7 @@
     animation-timing-function: linear;
     /* transform: rotate(100deg); */
     animation-duration: 1s;
+    transform-origin: bottom center;
 }
 
 @keyframes wing2 {
@@ -178,12 +180,12 @@
 
     30% {
         transform:
-            translate3d(300px, 50px, 50px) rotate3d(0, 0, 0, 0deg);
+            translate3d(300px, 50px, 60px) rotate3d(0, 0, 0, 0deg);
     }
 
     40% {
         transform:
-            translate3d(350px, 25px, 50px) rotate3d(0, 0, 0, 0deg);
+            translate3d(350px, 25px, 55px) rotate3d(0, 0, 0, 0deg);
     }
 
     45% {
