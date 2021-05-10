@@ -188,7 +188,7 @@
 
     45% {
         transform:
-            translate3d(400px, 0px, 50px) rotate3d(0.3, 1, 0, 180deg);
+            translate3d(350px, 0px, 50px) rotate3d(0.3, 1, 0, 180deg);
     }
 
     60% {
