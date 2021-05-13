@@ -11,40 +11,41 @@ const canvas = document.querySelector('canvas.webgl')
 // Scene
 const scene = new THREE.Scene()
 
-// Objects
+// Geometry: Torus
 const geometry = new THREE.TorusGeometry(.7, .2, 16, 100);
+// Materials: Torus
+const material = new THREE.PointsMaterial({
+    size: 0.005,
+})
+// Mesh: Torus
+const sphere = new THREE.Points(geometry, material)
 
+// Geometry: Particles
 const particlesGeometry = new THREE.BufferGeometry;
 const particlesCnt = 5000;
 
+// To provide x y z coordinates for every single particle - that's why we times it by 3
 const posArray = new Float32Array(particlesCnt * 3);
-
+// Disperse the particles so it's spread over the page
 for (let i = 0; i < particlesCnt * 3; i++) {
     posArray[i] = (Math.random() - 0.5) * 5
 }
 particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3))
 
-// Materials
-
-const material = new THREE.PointsMaterial({
-    size: 0.005,
-})
 // material.color = new THREE.Color(0xff0000)
+// Materials: Particles
 const particlesMaterial = new THREE.PointsMaterial({
     size: 0.007,
     map: cross,
     transparent: true,
-    // color: "blue",
     // blending: THREE.AdditiveBlending
 })
-// Mesh
-const sphere = new THREE.Points(geometry, material)
-
+// Mesh: Particles
 const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial)
+
 scene.add(sphere, particlesMesh)
 
 // Lights
-
 const pointLight = new THREE.PointLight(0xffffff, 0.1)
 pointLight.position.x = 2
 pointLight.position.y = 3
@@ -58,20 +59,6 @@ const sizes = {
     width: window.innerWidth,
     height: window.innerHeight
 }
-
-window.addEventListener('resize', () => {
-    // Update sizes
-    sizes.width = window.innerWidth
-    sizes.height = window.innerHeight
-
-    // Update camera
-    camera.aspect = sizes.width / sizes.height
-    camera.updateProjectionMatrix()
-
-    // Update renderer
-    renderer.setSize(sizes.width, sizes.height)
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-})
 
 /**
  * Camera
@@ -97,6 +84,26 @@ renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 renderer.setClearColor(new THREE.Color("#21282a"), 1)
 
+// update when resize
+window.addEventListener('resize', () => {
+    // Update sizes
+    sizes.width = window.innerWidth
+    sizes.height = window.innerHeight
+
+    // Update camera
+    camera.aspect = sizes.width / sizes.height
+    camera.updateProjectionMatrix()
+
+    // Update renderer
+    renderer.setSize(sizes.width, sizes.height)
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+})
+
+// Controls
+const controls = new THREE.OrbitControls(camera, renderer.particlesMesh)
+// controls.enableDamping = true
+controls.update();
+
 /**
  * Animate
  */
@@ -110,21 +117,12 @@ document.addEventListener("mousemove", animateParticles)
 let mouseX = 0;
 let mouseY = 0;
 
-
-
-// Controls
 const clock = new THREE.Clock()
-
-const controls = new THREE.OrbitControls(camera, renderer.particlesMesh)
-// controls.enableDamping = true
-controls.update();
-
 
 const tick = () => {
 
     // const elapsedTime = clock.getElapsedTime()
     const elapsedTime = clock.getDelta()
-
 
     // Update objects
     sphere.rotation.y += .5 * elapsedTime
@@ -134,7 +132,6 @@ const tick = () => {
         particlesMesh.rotation.x += -mouseY * (elapsedTime * 0.00008)
         particlesMesh.rotation.y += mouseX * (elapsedTime * 0.00008)
     }
-
 
     // Update Orbital Controls
     // controls.update()
@@ -146,8 +143,9 @@ const tick = () => {
     window.requestAnimationFrame(tick)
 }
 
-tick()
+tick();
 
+// GSAP animation
 const content = CSSRulePlugin.getRule('.content:before')
 const h1 = document.querySelector('h1')
 const p = document.querySelector('p')
