@@ -314,8 +314,6 @@ function animate() {
     //   
     // }
 
-    // /*  Mobile users?  I got your back homey  */
-
     // function onDocumentTouchStart(e) {
 
     //     if (e.touches.length === 1) {

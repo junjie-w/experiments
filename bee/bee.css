@@ -195,17 +195,17 @@
 
     60% {
         transform:
-            translate3d(18rem, 2rem, -50px) rotate3d(0.1, 1, 0, 180deg);
+            translate3d(18rem, 3rem, -50px) rotate3d(0.1, 1, 0, 180deg);
     }
 
     70% {
         transform:
-            translate3d(12rem, 3rem, -50px) rotate3d(0, 1, 0, 180deg);
+            translate3d(12rem, 4rem, -50px) rotate3d(0, 1, 0, 180deg);
     }
 
     80% {
         transform:
-            translate3d(10rem, 1rem, -20px) rotate3d(0, 1, 0, 180deg);
+            translate3d(7rem, 1rem, -20px) rotate3d(0, 1, 0, 180deg);
     }
 
     90% {
@@ -215,6 +215,6 @@
 
     100% {
         transform:
-            translate3d(-3rem, 0rem, -10px) rotate3d(0, 1, 0, 180deg);
+            translate3d(-3rem, 1rem, -10px) rotate3d(0, 1, 0, 180deg);
     }
 }
