@@ -40,6 +40,10 @@ body {
     margin: 0.7vw;
 }
 
+ul {
+    list-style-type: disc;
+}
+
 .demo:hover {
     font-weight: bold;
 }
