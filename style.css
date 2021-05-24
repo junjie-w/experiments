@@ -36,7 +36,7 @@ body {
 }
 
 .nav__ul {
-    width: 100%;
+    width: 225px;
     margin: 0.5vw;
     /* visibility: hidden; */
 }
