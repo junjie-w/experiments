@@ -13,10 +13,11 @@ body {
 
 .nav {
     position: fixed;
-    width: max(1vw, 2vh);
+    width: max(1vw, 3vh);
+    /* width: 225px; */
     height: 100vh;
     transition: 0.5s;
-    overflow: hidden;
+    overflow: scroll;
     padding: 2vw 1vw;
     border-right: 1px solid lightgrey;
     height: 75vh;
@@ -24,12 +25,18 @@ body {
     z-index: 3;
 }
 
+.nav::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
 .nav:hover {
-    width: 11.43vw;
+    width: 225px;
+    background-color: #fff;
 }
 
 .nav__ul {
-    width: 10vw;
+    width: 100%;
     margin: 0.5vw;
     /* visibility: hidden; */
 }
@@ -37,11 +44,15 @@ body {
 .nav ul li {
     width: 100%;
     list-style: none;
-    margin: 0.7vw;
+    margin: 15px;
 }
 
 ul {
     list-style-type: disc;
+}
+
+.demo {
+    width: 100%;
 }
 
 .demo:hover {
@@ -64,10 +75,148 @@ a {
     color: white;
 }
 
-/* body {
-    display: grid;
-} */
+.nav.demo_white:hover {
+    background-color: transparent;
+}
 
 .readme {
     margin: auto;
+    margin-left: 17vw;
+    padding-top: 4vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.readme__projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-bottom: 30px;
+}
+
+.grid {
+    margin-right: 5vw;
+    margin-bottom: 30px;
+}
+
+.gridImg {
+    width: 20vw;
+    height: 12vw;
+    border-radius: 10px;
+    object-fit: cover;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+/* .gridImg:hover {} */
+
+.grid:hover .gridImg {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    transform: rotate(5deg);
+    opacity: 0.9;
+}
+
+.grid:hover .gridtext {
+    font-weight: bold;
+    color: #333;
+}
+
+.gridtext {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-top: 10px;
+    -webkit-transition: .1s ease-in-out;
+    transition: .1s ease-in-out;
+}
+
+.gridLink {
+    color: #333;
+}
+
+/* .gridtext:hover {
+    font-weight: bold;
+} */
+
+.description {
+    display: flex;
+    flex-direction: column;
+}
+
+.description p {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.githubLogo {
+    align-self: flex-end;
+}
+
+.githubLogo img {
+    width: min(5vw, 45px);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.githubLogo img:hover {
+    transform: scale(1.05);
+    transform: rotate(13deg);
+}
+
+/* .hamburger {
+    top: 0vw;
+    margin-top: -50px;
+    width: 20px;
+    height: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    cursor: pointer;
+}
+
+.bar {
+    width: 20px;
+    margin: 5px 0;
+    height: 1px;
+    background-color: #333;
+} */
+
+@media (orientation:portrait) {
+    * {
+        font-size: 14px;
+    }
+
+    .readme {
+        margin-left: 12vw;
+    }
+
+    .readme__projects {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        margin-bottom: 0;
+    }
+
+    .gridImg {
+        width: 30vw;
+        height: 18vw;
+    }
+
+    .description {
+        width: 85%;
+    }
+
+    .githubLogo {
+        margin: 1vw;
+    }
+
+    .readme {
+        padding: 50px 0;
+    }
+
+    /* .nav__ul {
+        display: none;
+    }
+
+    .nav:hover .nav__ul {
+        display: inline-block;
+    } */
 }
