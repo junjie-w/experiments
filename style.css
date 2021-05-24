@@ -117,8 +117,6 @@ a {
     transition: .3s ease-in-out;
 }
 
-/* .gridImg:hover {} */
-
 .grid:hover .gridImg {
     -webkit-transform: scale(1.05);
     transform: scale(1.05);
@@ -141,10 +139,6 @@ a {
 .gridLink {
     color: #333;
 }
-
-/* .gridtext:hover {
-    font-weight: bold;
-} */
 
 .description {
     display: flex;
