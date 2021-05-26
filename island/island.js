@@ -123,18 +123,41 @@ microwave.addEventListener("click", (e) => {
     }, 5500)
 })
 
-document.onclick = e => {
-    if (e.detail === 2) {
-        document.querySelector("#cameraWrapper").object3D.position.set(0, 0, 0);
-        room.emit("animation-resume")
+var touchtime = 0;
+$(document).on('click', function () {
+    if (touchtime == 0) {
+        touchtime = new Date().getTime();
+    } else {
+        if (((new Date().getTime()) - touchtime) < 800) {
+            // alert("double clicked");
+            touchtime = 0;
 
-        document.querySelector("#cameraWrapper").setAttribute("orbit-controls", {
-            target: "0 1.35 0",
-            initialPosition: "0 1.35 6"
-        });
-        document.querySelector('#recipe').object3D.visible = false;
+            document.querySelector("#cameraWrapper").object3D.position.set(0, 0, 0);
+            room.emit("animation-resume")
+
+            document.querySelector("#cameraWrapper").setAttribute("orbit-controls", {
+                target: "0 1.35 0",
+                initialPosition: "0 1.35 6"
+            });
+            document.querySelector('#recipe').object3D.visible = false;
+        } else {
+            touchtime = 0;
+        }
     }
-}
+});
+
+// document.onclick = e => {
+//     if (e.detail === 2) {
+//         document.querySelector("#cameraWrapper").object3D.position.set(0, 0, 0);
+//         room.emit("animation-resume")
+
+//         document.querySelector("#cameraWrapper").setAttribute("orbit-controls", {
+//             target: "0 1.35 0",
+//             initialPosition: "0 1.35 6"
+//         });
+//         document.querySelector('#recipe').object3D.visible = false;
+//     }
+// }
 
 AFRAME.registerComponent('modify-vacation', {
     init: function () {
