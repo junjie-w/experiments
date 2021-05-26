@@ -1,9 +1,5 @@
 .rs-base {
     display: none;
-    left: auto;
-    top: 40px;
-    right: 1vw;
-    transition: all .2s ease-in-out;
 }
 
 .rs-base .rs-container * {
@@ -36,8 +32,16 @@
     transform: scale(0.99);
 }
 
+.stats:focus {
+    outline: none;
+}
+
 .showStats {
     display: inline-block;
+    left: auto !important;
+    top: 40px;
+    right: 1vw;
+    transition: all .2s ease-in-out;
 }
 
 .dark {
