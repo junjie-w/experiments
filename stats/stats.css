@@ -33,13 +33,13 @@
 }
 
 .stats:focus {
-    outline: none;
+    /* outline: none; */
 }
 
 .showStats {
     display: inline-block;
     left: auto !important;
-    top: 40px;
+    top: 40px !important;
     right: 1vw;
     transition: all .2s ease-in-out;
 }

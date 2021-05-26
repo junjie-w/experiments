@@ -2,6 +2,11 @@ let scene, sceneLight, portalLight, cam, renderer, clock, portalParticles = [],
     smokeParticles = [];
 let canvas = document.querySelector(".scene")
 
+// Stats
+let stats = new Stats();
+// stats.showPanel(1); // 0: fps, 1: ms, 2: mb, 3+: custom
+document.body.appendChild(stats.dom);
+
 initScene = () => {
     scene = new THREE.Scene()
 
@@ -176,6 +181,9 @@ animate = () => {
         renderer.setSize(window.innerWidth, window.innerHeight);
 
     }
+
+    // Update Stats
+    stats.update();
 
     renderer.render(scene, cam);
     requestAnimationFrame(animate);

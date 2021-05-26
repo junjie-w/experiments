@@ -84,6 +84,7 @@ a {
 
 .demo_white span {
     color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .nav.demo_white:hover {

@@ -1,7 +1,7 @@
 var product = document.querySelector('#product');
 var el = document.querySelector('a-sphere');
 
-document.querySelector("button:nth-child(1)").addEventListener("click", () => {
+document.querySelector(".product_button:nth-child(1)").addEventListener("click", () => {
     el.emit("rotation-pause")
     document.querySelector("#animation1").emit("animation1")
     setTimeout(() => {
@@ -13,7 +13,7 @@ document.querySelector("button:nth-child(1)").addEventListener("click", () => {
     }, 1000)
 });
 
-document.querySelector("button:nth-child(2)").addEventListener("click", () => {
+document.querySelector(".product_button:nth-child(2)").addEventListener("click", () => {
     el.emit("rotation-pause")
     document.querySelector("#animation2").emit("animation2")
     setTimeout(() => {
@@ -25,7 +25,7 @@ document.querySelector("button:nth-child(2)").addEventListener("click", () => {
     }, 1000)
 });
 
-document.querySelector("button:nth-child(3)").addEventListener("click", () => {
+document.querySelector(".product_button:nth-child(3)").addEventListener("click", () => {
     el.emit("rotation-pause")
     document.querySelector("#animation3").emit("animation3")
     setTimeout(() => {
@@ -37,7 +37,7 @@ document.querySelector("button:nth-child(3)").addEventListener("click", () => {
     }, 1000)
 });
 
-document.querySelector("button:nth-child(4)").addEventListener("click", () => {
+document.querySelector(".product_button:nth-child(4)").addEventListener("click", () => {
     el.emit("rotation-pause")
     document.querySelector("#animation4").emit("animation4")
     setTimeout(() => {

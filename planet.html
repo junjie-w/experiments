@@ -19,6 +19,7 @@
     <script
         src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js">
     </script>
+    <link rel="stylesheet" href="stats/stats.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="planet/planet.css">
     <title>planet</title>
@@ -27,9 +28,11 @@
 <body>
     <div class="nav"> </div>
 
+    <button class="stats">Performance Stats</button>
+
     <div class="app_container">
         <div class="app">
-            <a-scene embedded cursor="rayOrigin:mouse">
+            <a-scene embedded cursor="rayOrigin:mouse" stats>
                 <a-assets>
                     <img id="sphere" src="planet/images/earthpic.webp">
                     <img id="universe" src="planet/images/universe.webp">
@@ -118,15 +121,16 @@
         </div>
 
         <div class="buttons">
-            <button>Product A - Germany</button>
-            <button>Product B - Britain</button>
-            <button>Product C - Spain</button>
-            <button>Product D - Finland</button>
+            <button class="product_button">Product A - Germany</button>
+            <button class="product_button">Product B - Britain</button>
+            <button class="product_button">Product C - Spain</button>
+            <button class="product_button">Product D - Finland</button>
             <!-- <button>reset</button> -->
         </div>
     </div>
 
     <script src="nav/nav.js"></script>
+    <script src="stats/stats.js"></script>
     <script src="planet/planet.js"></script>
 </body>
 

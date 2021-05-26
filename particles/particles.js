@@ -119,8 +119,12 @@ let mouseY = 0;
 
 const clock = new THREE.Clock()
 
-const tick = () => {
+// Stats
+let stats = new Stats();
+// stats.showPanel(1); // 0: fps, 1: ms, 2: mb, 3+: custom
+document.body.appendChild(stats.dom);
 
+const tick = () => {
     // const elapsedTime = clock.getElapsedTime()
     const elapsedTime = clock.getDelta()
 
@@ -135,6 +139,9 @@ const tick = () => {
 
     // Update Orbital Controls
     // controls.update()
+
+    // Update Stats
+    stats.update();
 
     // Render
     renderer.render(scene, camera)
