@@ -21,19 +21,19 @@ body {
 
 #mute {
     position: absolute;
-    bottom: -0.83vw;
-    right: 5.5vw;
+    bottom: 30px;
+    right: -3px;
     z-index: 1;
-    width: 2.5vw;
-    height: 2.5vw;
-    margin: 1.15vw;
+    width: 45px;
+    margin: 15px;
     cursor: pointer;
     fill: #687980;
-    transition: 0.5s;
+    transition: all 0.5s ease-in-out;
 }
 
 #mute:hover {
     fill: #8ac4d0;
+    transform: scale(1.07);
 }
 
 #Line_1 {
@@ -114,4 +114,55 @@ body {
 
 .clockAppear {
     visibility: visible;
+}
+
+.rs-base {
+    display: none;
+    left: auto;
+    top: 40px;
+    right: 1vw;
+}
+
+.rs-base .rs-container * {
+    font-size: 10px !important;
+}
+
+.stats {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    z-index: 1;
+    cursor: pointer;
+    border: 1px solid #444;
+    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.09);
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px 20px;
+    /* padding: 0.25vw 0.85vw; */
+    font-size: max(0.7vw, 11px);
+    margin: 0 1vw;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.stats:hover {
+    font-weight: bold;
+    transform: scale(1.02);
+    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.09);
+}
+
+.showStats {
+    display: inline-block;
+}
+
+@media (orientation: portrait) {
+    #mute {
+        bottom: 40px;
+        right: 7px;
+        z-index: 1;
+        width: 40px;
+        margin: 5px;
+        cursor: pointer;
+        fill: #687980;
+        transition: 0.5s;
+    }
 }

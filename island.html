@@ -21,6 +21,10 @@
     </script>
     <script src="https://unpkg.com/super-hands@^3.0.1/dist/super-hands.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three-orbitcontrols@2.110.3/OrbitControls.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu&family=Maven+Pro&family=Mulish&family=Noto+Sans+JP&family=Roboto:wght@300&family=Tajawal&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="island/island.css">
     <title>island</title>
@@ -54,8 +58,10 @@
                 d="M48.91,15l-0.12,0A1,1,0,0,0,48,16v6a1,1,0,1,0,2,0s0,0,0,0V16a1,1,0,0,0-1-1H48.91Z" />
         </svg>
 
+        <button class="stats">Performance Stats</button>
+
         <a-scene embedded cursor="rayOrigin:mouse; fuseTimeout: 0" class="scene" vr-mode-ui="enabled: true"
-            physics="gravity: 0.1; restitution: 0.7">
+            physics="gravity: 0.1; restitution: 0.7" stats>
 
             <a-entity progressive-controls></a-entity>
 
