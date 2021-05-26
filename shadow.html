@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stats/stats.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="shadow/shadow.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
@@ -28,11 +29,13 @@
 <body>
     <div class="nav demo_white"> </div>
 
+    <button class="stats dark">Performance Stats</button>
+
     <div class="demo">
         <div class="storm"></div>
         <div class="snowman">
             <a-scene cursor="rayOrigin:mouse; fuseTimeout: 0" physics="gravity: -1.8; restitution: 0.9; debug: false;"
-                antialias='true' id="scene">
+                antialias='true' id="scene" stats>
                 <!-- <a-entity progressive-controls></a-entity> -->
 
                 <a-assets>
@@ -178,6 +181,7 @@
     </div>
 
     <script src="nav/nav.js"></script>
+    <script src="stats/stats.js"></script>
     <script src="shadow/shadow.js"></script>
 </body>
 

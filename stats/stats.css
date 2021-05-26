@@ -1,0 +1,47 @@
+.rs-base {
+    display: none;
+    left: auto;
+    top: 40px;
+    right: 1vw;
+    transition: all .2s ease-in-out;
+}
+
+.rs-base .rs-container * {
+    font-size: 10px !important;
+}
+
+.stats {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    z-index: 1;
+    cursor: pointer;
+    border: 1px solid #444;
+    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.09);
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px 20px;
+    /* padding: 0.25vw 0.85vw; */
+    font-size: max(0.75vw, 12px);
+    margin: 0 1vw;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.stats:hover {
+    transform: scale(1.01);
+    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.09);
+}
+
+.stats:active {
+    transform: scale(0.99);
+}
+
+.showStats {
+    display: inline-block;
+}
+
+.dark {
+    background-color: grey;
+    color: whitesmoke;
+    border: 1px solid lightslategrey;
+}
