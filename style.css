@@ -27,6 +27,8 @@ body {
     height: 75vh;
     align-self: center;
     z-index: 3;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .nav::-webkit-scrollbar {
