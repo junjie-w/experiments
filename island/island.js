@@ -366,5 +366,5 @@ window.addEventListener("resize", () => {
 })
 
 if (window.matchMedia("(orientation: portrait)").matches) {
-    cloth.position.set(-0.78, 5, 0);
+    cloth.position.set(-0.78, 4.75, 0);
 }
