@@ -364,3 +364,7 @@ window.addEventListener("resize", () => {
     camera.updateProjectionMatrix()
     renderer.setSize(softClock.clientWidth, softClock.clientHeight);
 })
+
+if (window.matchMedia("(orientation: portrait)").matches) {
+    cloth.position.set(-0.78, 5, 0);
+}
