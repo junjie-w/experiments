@@ -13,9 +13,6 @@
     left: -30%;
     width: 4vw;
     transform: translate3d(0, 0, 0);
-
-    /* -webkit-transform: scaleX(-1);
-    transform: scaleX(-1); */
 }
 
 .leaves {
