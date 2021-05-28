@@ -32,10 +32,6 @@
     transform: scale(0.99);
 }
 
-.stats:focus {
-    /* outline: none; */
-}
-
 .showStats {
     display: inline-block;
     left: auto !important;
