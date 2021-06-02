@@ -115,10 +115,12 @@
                 </a-box>
 
                 <a-sky src="#universe"></a-sky>
-                <a-plane rotation="-100 20 0" width="10" height="10" repeat="10 10" src="#ground"></a-plane>
+                <a-plane rotation="-100 20 0" width="10" height="10" repeat="10 10" src="#ground">
+                </a-plane>
 
-                <a-entity id="cameraWrapper" position="0 0 0"
-                    orbit-controls="initialPosition: 0 -0.55 1; maxPolarAngle: 360;">
+                <!-- <a-entity id="cameraWrapper" position="0 0 0"
+                    orbit-controls="initialPosition: 0 -0.05 0.1; maxPolarAngle: 360;"> -->
+                <a-entity id="cameraWrapper" position="0 0 0">
                     <a-camera id="camera">
                     </a-camera>
                 </a-entity>
